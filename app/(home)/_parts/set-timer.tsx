@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/popover";
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const SetTimer = () => {
   const [hour, setHour] = useState<number>(0);
@@ -53,26 +54,28 @@ const SetTimer = () => {
 
               <CommandEmpty>Type number.</CommandEmpty>
 
-              <CommandGroup>
-                {hr.map((e) => (
-                  <CommandItem
-                    key={e}
-                    value={e + ""}
-                    onSelect={(currentValue) => {
-                      setHour(Number(currentValue));
-                      setOpenHour(false);
-                    }}
-                  >
-                    {e}
-                    <CheckIcon
-                      className={cn(
-                        "ml-auto h-4 w-4",
-                        hour === e ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
+              <ScrollArea className="h-72">
+                <CommandGroup>
+                  {hr.map((e) => (
+                    <CommandItem
+                      key={e}
+                      value={e + ""}
+                      onSelect={(currentValue) => {
+                        setHour(Number(currentValue));
+                        setOpenHour(false);
+                      }}
+                    >
+                      {e}
+                      <CheckIcon
+                        className={cn(
+                          "ml-auto h-4 w-4",
+                          hour === e ? "opacity-100" : "opacity-0"
+                        )}
+                      />
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              </ScrollArea>
             </Command>
           </PopoverContent>
         </Popover>
@@ -100,26 +103,28 @@ const SetTimer = () => {
 
               <CommandEmpty>Type number.</CommandEmpty>
 
-              <CommandGroup>
-                {minAndSec.map((e) => (
-                  <CommandItem
-                    key={e}
-                    value={e + ""}
-                    onSelect={(currentValue) => {
-                      setMinute(Number(currentValue));
-                      setOpenMin(false);
-                    }}
-                  >
-                    {e}
-                    <CheckIcon
-                      className={cn(
-                        "ml-auto h-4 w-4",
-                        minute === e ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
+              <ScrollArea className="h-72">
+                <CommandGroup>
+                  {minAndSec.map((e) => (
+                    <CommandItem
+                      key={e}
+                      value={e + ""}
+                      onSelect={(currentValue) => {
+                        setMinute(Number(currentValue));
+                        setOpenMin(false);
+                      }}
+                    >
+                      {e}
+                      <CheckIcon
+                        className={cn(
+                          "ml-auto h-4 w-4",
+                          minute === e ? "opacity-100" : "opacity-0"
+                        )}
+                      />
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              </ScrollArea>
             </Command>
           </PopoverContent>
         </Popover>
@@ -147,26 +152,28 @@ const SetTimer = () => {
 
               <CommandEmpty>Type number.</CommandEmpty>
 
-              <CommandGroup>
-                {minAndSec.map((e) => (
-                  <CommandItem
-                    key={e}
-                    value={e + ""}
-                    onSelect={(currentValue) => {
-                      setSecond(Number(currentValue));
-                      setOpenSec(false);
-                    }}
-                  >
-                    {e}
-                    <CheckIcon
-                      className={cn(
-                        "ml-auto h-4 w-4",
-                        second === e ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
+              <ScrollArea className="h-72">
+                <CommandGroup>
+                  {minAndSec.map((e) => (
+                    <CommandItem
+                      key={e}
+                      value={e + ""}
+                      onSelect={(currentValue) => {
+                        setSecond(Number(currentValue));
+                        setOpenSec(false);
+                      }}
+                    >
+                      {e}
+                      <CheckIcon
+                        className={cn(
+                          "ml-auto h-4 w-4",
+                          second === e ? "opacity-100" : "opacity-0"
+                        )}
+                      />
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              </ScrollArea>
             </Command>
           </PopoverContent>
         </Popover>
